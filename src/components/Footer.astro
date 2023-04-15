@@ -1,0 +1,22 @@
+---
+import FormattedDate from "./FormattedDate.astro";
+import { Debug } from "astro/components";
+const today = new Date();
+
+const { pubDate, updatedDate, authors } = Astro.props;
+---
+
+<footer class="text-center mt-4 break-before-avoid">
+  <span class="">&copy;</span>
+  {today.getFullYear()}
+  <span>
+    {
+      authors && authors.map((author: string) => (
+        <span class="peer after:content-[','] last-of-type:after:content-none">
+          {author}<!--
+		--></span>
+      ))
+    }
+  </span>
+  {updatedDate && <span class="block"> <FormattedDate date={updatedDate}/></span>}
+</footer>

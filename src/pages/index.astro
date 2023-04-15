@@ -1,0 +1,41 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Common from "../layouts/Common.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+import { getCollection } from "astro:content";
+
+const cheatsheets = (await getCollection("cheatsheets")).sort(
+  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+---
+
+<Common>
+  <main class="max-w-6xl m-auto">
+    <section>
+      <ol class="w-auto flex flex-wrap gap-4 justify-left">
+        {
+          cheatsheets.map((post) => (
+            <li
+              class="basis-[28ch] grow h-[20ch] bg-white border-[1px]
+             border-slate-300 w-sm rounded-xl overflow-hidden hover:shadow transition-shadow
+             "
+            >
+              <a
+                class="font-caps w-full h-full p-4 flex flex-col justify-center"
+                href={`/cheatsheets/${post.slug}/`}
+              >
+                <h2 class="underline tracking-wider">{post.data.title}</h2>
+                {/*<span class="font-sans">
+                  <FormattedDate date={post.data.pubDate} />
+                </span>*/}
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+  </main>
+</Common>

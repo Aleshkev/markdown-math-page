@@ -1,0 +1,24 @@
+---
+title: "Analiza"
+description: "AM2"
+pubDate: "Jul 02 2022"
+updatedDate: "Apr 15 2023"
+authors: Jonasz Aleszkiewicz, Thomas Romas
+---
+
+## Metoda stycznych
+
+- *metoda stycznych (Newtona):*
+
+  - $f: [a, b] in RR$ ciągła na $[a, b]$, $f''$ istnieje na $(a, b)$
+  - $f(a) < 0 < f(b)$
+  - $EE m_1 > 0, M_2 > 0$ t.że $f'(x) > m_1 > 0,\  0 < f''(x) < M_2$ dla $AA x in (a, b)$
+
+  **wtedy**
+
+  - ciąg $x_1 = b$, $x_[n+1] = x_n - [f(x_n)]/[f'(x_n)]$ jest malejący
+  - $c = lim x_n$ to jedyny punkt w $[a, b]$ t.że $f(c) = 0$
+  - $abs(c - x_[n+1]) <= (M_2) / (2m_1) abs(c - x_n)^2, quad n = 1, 2, ...$
+
+- ciąg funkcji $(f_n)$ jest _zbieżny punktowo_ do $f$ na zbiorze $X$ wtw $AA x in X.quad f(x) = lim_[n->oo] f_n(x)$
+- jest _zbieżny jednostajnie_ wtw $AA eps > 0.quad EE n_0 = n_0(eps)inNN$ t.że $AA x in X.quad AA n > n_0.quad abs(f(x) - f_n(x)) < eps$

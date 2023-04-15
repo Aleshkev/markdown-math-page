@@ -1,0 +1,12 @@
+
+.katex {
+  font-size: 1em;
+}
+.katex-display {
+  margin: 0;
+}
+.math-inline,
+.math-inline .katex,
+.math-inline .katex-html {
+  display: inline-block !important;
+}

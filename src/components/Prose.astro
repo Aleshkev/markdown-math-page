@@ -1,0 +1,83 @@
+---
+---
+
+<div class="content">
+  <slot />
+</div>
+
+<style is:global>
+  .content {
+    @apply font-serif leading-tight relative;
+  }
+
+  .content > * + * {
+    @apply mt-3;
+  }
+  .content > h2 + ul {
+    @apply mt-0;
+  }
+
+  .content p,
+  .content li {
+    @apply break-inside-avoid;
+  }
+
+  .content p {
+  }
+  .content blockquote {
+  }
+  .content img {
+  }
+
+  .content h1 {
+    @apply text-center underline underline-offset-2;
+  }
+
+  .content h1,
+  .content h2,
+  .content h3,
+  .content h4 {
+    @apply text-base font-caps break-after-avoid tracking-wider;
+  }
+  .content h2,
+  .content h3,
+  .content h4 {
+  }
+  .content img {
+  }
+  .content video {
+  }
+  .content figure {
+  }
+  .content figcaption {
+  }
+  .content pre,
+  .content code {
+    @apply font-mono text-[.92em];
+  }
+  .content pre {
+    @apply py-0 pl-3;
+  }
+
+  .content > ul {
+    @apply list-["§_"] pl-[.7em];
+  }
+  .content > ul ul {
+    @apply list-none flex flex-wrap gap-x-8 items-baseline;
+    counter-reset: my-list;
+  }
+  .content > ul ul > li {
+    @apply pl-4;
+  }
+  .content > ul ul > li::before {
+    @apply grow -ml-4;
+    counter-increment: my-list;
+    content: counter(my-list, lower-alpha) ") ";
+  }
+  .content li {
+  }
+
+  .content strong {
+    @apply font-normal font-caps;
+  }
+</style>

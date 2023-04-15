@@ -1,0 +1,24 @@
+---
+import HeaderLink from "./HeaderLink.astro";
+import { SITE_TITLE } from "../consts";
+import { Icon } from "astro-icon";
+---
+
+<header
+  class="print:hidden flex flex-row gap-x-3 justify-center px-4 py-1 rounded-full bg-slate-200/75 m-auto leading-8"
+>
+  <!-- <h2 class="">
+    {SITE_TITLE}
+  </h2> -->
+  <nav class="flex flex-wrap">
+    <HeaderLink href="/">
+      <Icon pack="mdi" name="home" class="w-[24px] inline" />
+    </HeaderLink>
+    <HeaderLink href="https://github.com/" target="_blank">
+      <Icon pack="mdi" name="github" class="w-[24px] inline" />
+    </HeaderLink>
+    <HeaderLink href="js:print" onclick="window.print(); return false;">
+      <Icon pack="mdi" name="printer" class="w-[24px] inline" />
+    </HeaderLink>
+  </nav>
+</header>

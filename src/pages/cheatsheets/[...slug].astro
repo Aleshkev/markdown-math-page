@@ -1,0 +1,26 @@
+---
+import { CollectionEntry, getCollection } from "astro:content";
+import Cheatsheet from "../../layouts/Cheatsheet.astro";
+import { Debug } from "astro/components";
+import Footer from "../../components/Footer.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("cheatsheets");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+type Props = CollectionEntry<"cheatsheets">;
+
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<Cheatsheet>
+  <h1>{post.data.title}</h1>
+  <Content />
+
+  <Footer {...post.data}/>
+  
+</Cheatsheet>
