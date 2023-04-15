@@ -13,7 +13,8 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://example.com',
+  site: 'https://aleshkev.github.io',
+  base: '/markdown-math-page',
   integrations: [mdx(), sitemap(), tailwind()],
   markdown: {
     remarkPlugins: [remarkGfm, remarkDirective, remarkMath,],

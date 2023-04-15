@@ -1,6 +1,7 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
+import { BASE } from "../consts";
 import "../styles/global.css";
 
 export interface Props {
@@ -11,7 +12,7 @@ export interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = "/placeholder-social.jpg" } = Astro.props;
+const { title, description, image = `${BASE}/placeholder-social.jpg` } = Astro.props;
 ---
 
 <!-- Global Metadata -->

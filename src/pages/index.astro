@@ -6,6 +6,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Common from "../layouts/Common.astro";
 import FormattedDate from "../components/FormattedDate.astro";
 import { getCollection } from "astro:content";
+import { BASE } from "../consts";
 
 const cheatsheets = (await getCollection("cheatsheets")).sort(
   (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
@@ -25,8 +26,9 @@ const cheatsheets = (await getCollection("cheatsheets")).sort(
             >
               <a
                 class="font-caps w-full h-full p-4 flex flex-col justify-center"
-                href={`/cheatsheets/${post.slug}/`}
+                href={`${BASE}/cheatsheets/${post.slug}/`}
               >
+              
                 <h2 class="underline tracking-wider">{post.data.title}</h2>
                 {/*<span class="font-sans">
                   <FormattedDate date={post.data.pubDate} />

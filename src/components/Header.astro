@@ -2,6 +2,7 @@
 import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
 import { Icon } from "astro-icon";
+import { BASE } from "../consts";
 ---
 
 <header
@@ -11,10 +12,10 @@ import { Icon } from "astro-icon";
     {SITE_TITLE}
   </h2> -->
   <nav class="flex flex-wrap">
-    <HeaderLink href="/">
+    <HeaderLink href={`${BASE}/`}>
       <Icon pack="mdi" name="home" class="w-[24px] inline" />
     </HeaderLink>
-    <HeaderLink href="https://github.com/" target="_blank">
+    <HeaderLink href="https://github.com/Aleshkev/markdown-math-page" target="_blank">
       <Icon pack="mdi" name="github" class="w-[24px] inline" />
     </HeaderLink>
     <HeaderLink href="js:print" onclick="window.print(); return false;">
